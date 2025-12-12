@@ -511,8 +511,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@zerov0x](https://github.com/zerov0x)
-- LinkedIn: [Sumip Chaudhary](https://linkedin.com/in/SumipChaudhary)
+- GitHub: [@zer0vox](https://github.com/zer0vox)
+- LinkedIn: [Sumip Chaudhary](https://www.linkedin.com/in/sumip-chaudhary-51a8451bb/)
 - Email: ersumipchaudhary@gmail.com
 
 ---
