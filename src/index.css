@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-neutral-200 dark:border-dark-border;
+  }
+  
+  body {
+    @apply font-sans text-neutral-900 dark:text-dark-text bg-white dark:bg-dark-bg antialiased;
+  }
+  
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  
+  h4 {
+    @apply text-xl font-medium;
+  }
+  
+  h5 {
+    @apply text-lg font-medium;
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-3 font-semibold rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-neutral-100 text-neutral-900 hover:bg-neutral-200 focus:ring-neutral-500 dark:bg-dark-surface dark:text-dark-text dark:hover:bg-neutral-700;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-neutral-300 text-neutral-700 hover:bg-neutral-50 focus:ring-neutral-500 dark:border-dark-border dark:text-dark-text dark:hover:bg-dark-surface;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white dark:bg-dark-surface rounded-lg border border-neutral-200 dark:border-dark-border shadow-sm;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-600;
+  }
+  
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-3 border border-neutral-300 rounded-md bg-neutral-100 dark:bg-dark-surface dark:border-dark-border text-neutral-900 dark:text-dark-text placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all;
+  }
+  
+  /* Badge Styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-sm font-medium rounded-full;
+  }
+  
+  .badge-primary {
+    @apply bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-200;
+  }
+  
+  .badge-success {
+    @apply bg-success-100 text-success-700 dark:bg-success-900 dark:text-success-200;
+  }
+  
+  .badge-warning {
+    @apply bg-warning-100 text-warning-700 dark:bg-warning-900 dark:text-warning-200;
+  }
+  
+  .badge-error {
+    @apply bg-error-100 text-error-700 dark:bg-error-900 dark:text-error-200;
+  }
+  
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-100 dark:bg-dark-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 dark:bg-neutral-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-400 dark:bg-neutral-600;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
