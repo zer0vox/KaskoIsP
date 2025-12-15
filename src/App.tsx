@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import CityCoverageMap from './components/CityCoverageMap';
+import Favorites from './components/Favorites';
 import SearchResults from './components/SearchResults';
 import Comparison from './components/Comparison';
 import Footer from './components/Footer';
@@ -17,6 +19,8 @@ function App() {
       <Header />
       <main className="flex-grow">
         <Hero onCitySelect={handleCitySelect} />
+        <CityCoverageMap />
+        <Favorites />
         
         {selectedCity && (
           <SearchResults cityId={selectedCity.id} cityName={selectedCity.name} />

@@ -335,6 +335,11 @@ VITE_ENABLE_GEOLOCATION=true
    **Error: "API access restricted"**
    - Check if you've exceeded your monthly quota (free tier: 10,000 requests/month)
    - Verify your IPStack account is active
+
+   **Error: "Rate limit reached" (code 106)**
+   - You hit the per-minute/hour limit for your plan
+   - Wait a few minutes and try again, or upgrade your plan
+   - During development, avoid frequent auto-refreshes to reduce API calls
    
    **Location not detected**
    - Check browser console for detailed error messages
@@ -677,12 +682,14 @@ The IPStack API integration includes:
    - Tries with security module first (for paid plans)
    - Automatically retries without security if error codes 104/105 occur (free tier)
    - Seamless experience regardless of plan type
+   - Surfaces rate limit (code 106) with a clear message to wait/upgrade
 
 2. **Error Handling**:
    - Specific error messages for common issues:
      - Code 101: Invalid API key
      - Code 102: Inactive account
      - Code 103: Quota exceeded
+     - Code 106: Rate limit reached
      - Code 104/105: Security module not available (auto-handled)
    - User-friendly error messages in the UI
    - Detailed console logs for debugging
@@ -708,6 +715,7 @@ The IPStack API integration includes:
 
 - **Free Tier**: 10,000 requests/month
 - **Paid Tiers**: Varies by plan (check IPStack dashboard)
+- The app surfaces a clear message when the rate limit is hit (error 106) and suggests waiting a few minutes or upgrading.
 
 Report bugs via [GitHub Issues](https://github.com/yourusername/isp-coverage-finder/issues)
 

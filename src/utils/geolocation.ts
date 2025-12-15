@@ -113,6 +113,9 @@ export const fetchGeolocation = async (accessKey?: string): Promise<GeolocationD
           const retryError = data.error;
           throw new Error(`IPStack API error: ${retryError.type} - ${retryError.info}`);
         }
+      } else if (errorInfo.code === 106) {
+        // Rate limit reached
+        throw new Error('IPStack rate limit reached. Please wait a few minutes or upgrade your plan.');
       } else {
         // For other errors, throw immediately
         throw new Error(`IPStack API error: ${errorInfo.type} - ${errorInfo.info}`);
@@ -145,6 +148,9 @@ export const fetchGeolocation = async (accessKey?: string): Promise<GeolocationD
       } else if (errorInfo.code === 104 || errorInfo.code === 105) {
         // This should have been handled above, but if we still get here, the retry failed
         errorMessage = `Security module not supported. Please use a paid plan or the API may be experiencing issues.`;
+        console.error(errorMessage);
+      } else if (errorInfo.code === 106) {
+        errorMessage = 'IPStack rate limit reached. Please wait a few minutes or upgrade your plan.';
         console.error(errorMessage);
       } else {
         errorMessage = `IPStack API error: ${errorInfo.type} - ${errorInfo.info}`;
