@@ -26,7 +26,7 @@ A professional, production-ready web application for comparing Internet Service 
 
 ---
 
-## 🎯 Overview
+## 🎯 Overview of the Project
 
 ISP Coverage Finder is a comprehensive platform that helps users in Nepal find and compare internet service providers based on their location, budget, and requirements. The application features realistic data for 10 major ISPs across 15 cities, complete with user reviews, coverage maps, and detailed plan comparisons.
 
@@ -364,7 +364,7 @@ const { geolocation, nearestCity, isLoading, error } = useGeolocation();
 
 ## 👨‍💻 Development
 
-### Code Style
+### Code Style - Author
 
 The project follows these conventions:
 - **Component names**: PascalCase (e.g., `ISPCard.tsx`)
@@ -462,7 +462,7 @@ export const useISPSearch = (filters) => {
 
 ---
 
-## 🌐 Deployment
+## 🌐 Deployment -- not ready needs to be done on vercell/netlify
 
 ### Netlify (Recommended)
 
